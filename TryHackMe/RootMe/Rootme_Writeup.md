@@ -17,6 +17,8 @@ Se realiza un escaneo con nmap para identificar los servicios expuestos en la m√
 
 nmap -sC -sV -oN rootme.txt 10.128.162.85
 
+![nmap](images/nmap.png)
+
 Se detecta un servidor web en el puerto 80, lo que indica un posible vector de entrada.
 
 ---
@@ -25,7 +27,7 @@ Se detecta un servidor web en el puerto 80, lo que indica un posible vector de e
 
 Se utiliza gobuster para encontrar rutas ocultas en el servidor web:
 
-gobuster dir -u http://10.128.162.85 -w /usr/share/wordlists/dirb/common.txt
+gobuster dir -u http://10.128.162.85 -w /usr/share/wordlists/dirbuster/directory-list-2.-medium.txt
 
 Se encuentra la ruta /panel/, lo que indica posible funcionalidad interesante.
 
