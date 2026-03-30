@@ -53,7 +53,7 @@ Se accede a /uploads/ y se ejecuta la shell mientras se pone en escucha:
 
 nc -lvnp 4444
 
-![nmap](images/shell.png)
+
 
 Se obtiene acceso inicial.
 
