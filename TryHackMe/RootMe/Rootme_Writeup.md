@@ -29,6 +29,8 @@ Se utiliza gobuster para encontrar rutas ocultas en el servidor web:
 
 gobuster dir -u http://10.128.162.85 -w /usr/share/wordlists/dirbuster/directory-list-2.-medium.txt
 
+![nmap](images/gobuster.png)
+
 Se encuentra la ruta /panel/, lo que indica posible funcionalidad interesante.
 
 ---
@@ -41,6 +43,8 @@ Tras varias pruebas, se observa que permite subir archivos .phtml, lo que permit
 
 Se sube una reverse shell.
 
+![nmap](images/panel.png)
+
 ---
 
 ## 🐚 Reverse Shell
@@ -48,6 +52,8 @@ Se sube una reverse shell.
 Se accede a /uploads/ y se ejecuta la shell mientras se pone en escucha:
 
 nc -lvnp 4444
+
+![nmap](images/shell.png)
 
 Se obtiene acceso inicial.
 
@@ -80,6 +86,8 @@ Se ejecuta:
 python2.7 -c 'import os; os.setuid(0); os.system("/bin/bash")'
 
 Se obtiene root.
+
+![nmap](images/root.png)
 
 ---
 
